@@ -1,11 +1,13 @@
 package ru.leetcode.arrays;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TwoSum {
     public static void main(String[] args) {
         //int[] nums = {2, 7, 11, 15, 5, 6};
-        int[] nums = {-1,-2,-3,-4,-5};
+        int[] nums = {-1, -2, -3, -4, -5};
         //int[] nums = {0,4,3,0};
         // int target = 11;
         //int target = 0;
@@ -26,4 +28,21 @@ public class TwoSum {
         }
         return new int[]{0, 0};
     }
+
+    // Улучшенный код
+    public int[] twoSumV2(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int cur = nums[i];
+            // cur + x = target
+            // x = target - cur
+            int x = target - cur;
+            if (map.containsKey(x)) {
+                return new int[]{map.get(x), i};
+            }
+            map.put(cur, i);
+        }
+        return new int[]{0, 0};
+    }
+
 }
