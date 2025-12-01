@@ -14,6 +14,7 @@ public class TwoSum {
         int target = -8;
         TwoSum obj = new TwoSum();
         System.out.println(Arrays.toString(obj.twoSum(nums, target)));
+        System.out.println(Arrays.toString(obj.twoSumV2(nums, target)));
     }
 
     public int[] twoSum(int[] nums, int target) {
