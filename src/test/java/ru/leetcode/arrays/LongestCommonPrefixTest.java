@@ -19,4 +19,18 @@ class LongestCommonPrefixTest {
         Assertions.assertEquals("", longestCommonPrefix.longestCommonPrefix(strs));
     }
 
+
+    @Test
+    void longestCommonPrefixV2() {
+        val strs = new String[]{"flower","flow","flight"};
+        LongestCommonPrefix longestCommonPrefix = new LongestCommonPrefix();
+        Assertions.assertEquals("fl", longestCommonPrefix.longestCommonPrefixV2(strs));
+    }
+
+    @Test
+    void longestCommonPrefixEmptyV2() {
+        val strs = new String[]{"dog","racecar","car"};
+        LongestCommonPrefix longestCommonPrefix = new LongestCommonPrefix();
+        Assertions.assertEquals("", longestCommonPrefix.longestCommonPrefixV2(strs));
+    }
 }
