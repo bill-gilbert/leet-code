@@ -37,4 +37,18 @@ class RemoveElementTest {
 
         assert k == 0;
     }
+
+    @Test
+    void removeElementWithOneCorrectElemeTest() {
+        RemoveElement r = new RemoveElement();
+
+        int[] nums = new int[]{1}; // Input array
+        int val = 5; // Value to remove
+        int[] expectedNums = new int[]{}; // The expected answer with correct length.
+        // It is sorted with no values equaling val.
+
+        int k = r.removeElement(nums, val); // Calls your implementation
+
+        assert k == 1;
+    }
 }
