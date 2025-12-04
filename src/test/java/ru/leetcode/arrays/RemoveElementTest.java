@@ -51,4 +51,22 @@ class RemoveElementTest {
 
         assert k == 1;
     }
+
+    @Test
+    void removeElementCase2Test() {
+        RemoveElement r = new RemoveElement();
+
+        int[] nums = new int[]{5, 7, 8, 1, 2, 2, 4, 5}; // Input array
+        int val = 1; // Value to remove
+        int[] expectedNums = new int[]{2, 2, 4, 5, 5, 7, 8}; // The expected answer with correct length.
+        // It is sorted with no values equaling val.
+
+        int k = r.removeElement(nums, val); // Calls your implementation
+
+        assert k == 7;
+        sort(nums, 0, k); // Sort the first k elements of nums
+        for (int i = 0; i < 5; i++) {
+            assert nums[i] == expectedNums[i];
+        }
+    }
 }
