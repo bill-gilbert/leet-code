@@ -15,6 +15,7 @@ class PascalsTriangleV2Test {
         List<Integer> expected = List.of(1);
 
         assertEquals(expected, pascal.getRow(0));
+        assertEquals(expected, pascal.getRowV2(0));
     }
 
     @Test
@@ -22,6 +23,7 @@ class PascalsTriangleV2Test {
         PascalsTriangleV2 pascal = new PascalsTriangleV2();
         List<Integer> expected = List.of(1, 2, 1);
         assertEquals(expected, pascal.getRow(2));
+        assertEquals(expected, pascal.getRowV2(2));
     }
 
     @Test
@@ -29,6 +31,7 @@ class PascalsTriangleV2Test {
         PascalsTriangleV2 pascal = new PascalsTriangleV2();
         List<Integer> expected = List.of(1, 3, 3, 1);
         assertEquals(expected, pascal.getRow(3));
+        assertEquals(expected, pascal.getRowV2(3));
     }
 
     @Test
@@ -37,6 +40,7 @@ class PascalsTriangleV2Test {
         List<Integer> expected = List.of(1, 5, 10, 10, 5, 1);
 
         assertEquals(expected, pascal.getRow(5));
+        assertEquals(expected, pascal.getRowV2(5));
     }
 
     @Test
@@ -44,5 +48,6 @@ class PascalsTriangleV2Test {
         PascalsTriangleV2 pascal = new PascalsTriangleV2();
         List<Integer> expected = List.of(1, 6, 15, 20, 15, 6, 1);
         assertEquals(expected, pascal.getRow(6));
+        assertEquals(expected, pascal.getRowV2(6));
     }
 }

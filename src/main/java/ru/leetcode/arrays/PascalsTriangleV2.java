@@ -1,5 +1,6 @@
 package ru.leetcode.arrays;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -17,5 +18,26 @@ public class PascalsTriangleV2 {
             }
         }
         return Arrays.stream(elements).boxed().toList();
+    }
+
+    public int nCr(int n, int r) {
+        long ans = 1;
+        for (int i = 1; i <= r; i++) {
+            ans *= (n - i + 1);
+            ans /= i;
+        }
+        return (int) (ans);
+    }
+
+    public List<Integer> getRowV2(int rowIndex) {
+        List<Integer> arr = new ArrayList<>();
+        for (int i = 0; i <= rowIndex; i++) {
+            if (i == 0 || i == rowIndex)
+                arr.add(1);
+            else
+                arr.add(nCr(rowIndex, i));
+
+        }
+        return arr;
     }
 }
